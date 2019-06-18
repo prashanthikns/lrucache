@@ -1,5 +1,5 @@
 PROBLEM:
-ign and implement a data structure for Least Recently Used (LRU) cache service.
+Design and implement a data structure for Least Recently Used (LRU) cache service.
 It should
 support the following operations: get and put.
 get(key) - Get the value (will always be positive) of the key if the key exists
