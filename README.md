@@ -17,6 +17,32 @@ existing. This will update the value(if a different value given), and move the
 node to the end of the list. This is the reason for the implementation and use
 of Doubly linked list, rather than an inbuilt container like Deque.
 
+DEPLOY:
+------
+
+To Build:
+
+git clone https://github.com/prashanthikns/lrucache.git
+cd lrucache
+mvn package // automatically runs the junit test cases
+
+To start server:
+java -cp target/lru-app-1.0-SNAPSHOT.jar com.prashanthi.lru.MyHttpServer <capacity>
+
+To try:
+curl -v -X GET http://localhost:8080/api/v1/get/1
+curl -v -X GET http://localhost:8080/api/v1/put/1 -d "value=100"
+curl -v -X GET http://localhost:8080/api/v1/put/2 -d "value=200"
+curl -v -X GET http://localhost:8080/api/v1/get/1
+curl -v -X GET http://localhost:8080/api/v1/put/3 -d "value=300"
+curl -v -X GET http://localhost:8080/api/v1/get/abc
+curl -v -X GET http://localhost:8080/api/v1/put/2 -d "value=abc"
+curl -v -X GET http://localhost:8080/api/v1/put/4 -d "hello"
+curl -v -X GET http://localhost:8080/api/v1/put/4
+
+IMPLEMENTATION DETAILS:
+----------------------
+
 SOLUTION:
 The data structures used to implement the LRU cache are a HashMap and a doubly
 linked list.
