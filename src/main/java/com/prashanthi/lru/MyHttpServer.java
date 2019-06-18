@@ -162,5 +162,17 @@ public void stop() {
     server.stop(0);
 }
 
+public static void main(String args[]) throws Exception {
+    int capacity = 2;
+    try {
+        capacity = Integer.parseInt(args[0]);
+    } catch(Exception e) {
+    }
+
+    System.out.printf("Starting HTTP server on port 8080 with capacity %d\n", capacity);
+    MyHttpServer server = new MyHttpServer("127.0.0.1", 8080, capacity);
+    server.start();
+}
+
 } // end class MyHttpServer
 
